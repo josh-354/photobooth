@@ -1,0 +1,160 @@
+body {
+  background-color: #6F0C0C;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* centers video horizontally */
+  align-items: center;     /* centers video vertically */
+  position: relative;      /* allows absolute positioning for logo */
+  flex-direction: column;  /* stack video and button vertically */
+}
+
+/* Centered video and button container */
+#container2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+video {
+  width: 800px;
+  height: auto; /* keeps correct aspect ratio */
+  border-radius: 10px;
+  border: 3px solid #fff;
+}
+
+/* Button below video */
+#startButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #6F0C0C;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#startButton:hover {
+  background-color: #ddd;
+}
+
+/* Logo at top-left corner */
+.logo {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 100px;
+  height: 100px;
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+
+.modal-content {
+  display: flex;
+  align-items: flex-start;
+  padding: 50px 32px;
+  width: 90%;
+  max-width: 1600px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+/* Image grid: 3x3 for 9 images */
+.image-grid {
+  width: 930px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 20px;
+    margin-right: 70px;
+}
+
+.image-grid img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.image-grid img:hover {
+  opacity: 0.8;
+}
+
+/* Selection area on the right (photobooth frame) */
+.selection-area {
+  width:400px;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  border: 5px solid #fff; /* Optional: add a border to make it look like a frame */
+  background-image: url("./frames/frame1.png");
+  gap
+
+}
+.slot{
+  width: 100%;
+  height: 100px;
+}
+
+.frame {  
+  grid-template-rows: repeat(4, 1fr);
+  gap: 10px;
+  width: 350px;
+  background-color: white;
+  justify-items: center;
+  align-items: center;
+  padding-top: 40px;
+}
+
+.frame .img1,
+.frame .img2,
+.frame .img3 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dashed #6F0C0C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #6F0C0C;
+  height: 120px;
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.frame .img4 {
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 2px dashed #6F0C0C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  color: #6F0C0C;
+  height: 120px;
+  width: 250px;
+  margin-bottom: 50px;  
+}
