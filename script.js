@@ -4,6 +4,8 @@ const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 const imageGrid = document.getElementById('imageGrid');
 const downloadButton = document.getElementById('downloadButton');
+const frameSelector = document.getElementById('frameSelector');
+const frame = document.querySelector('.frame');
 // Fix: Use querySelector to match the HTML structure (img1, img2, etc.)
 const slots = [
   document.querySelector('.img1'),
@@ -12,6 +14,9 @@ const slots = [
   document.querySelector('.img4')
 ];
 let currentSlot = 0;
+
+// Set initial frame
+frame.style.backgroundImage = `url(${frameSelector.value})`;
 
 // Request access to the camera
 navigator.mediaDevices.getUserMedia({ video: true })
@@ -81,6 +86,11 @@ function selectImage(imgSrc, index) {
     currentSlot++;
   }
 }
+
+// Event listener for frame selector
+frameSelector.addEventListener('change', () => {
+  frame.style.backgroundImage = `url(${frameSelector.value})`;
+});
 
 // Event listener for download button
 downloadButton.addEventListener('click', () => {
