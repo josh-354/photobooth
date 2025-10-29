@@ -3,11 +3,13 @@ const startButton = document.getElementById('startButton');
 const modal = document.getElementById('modal');
 const closeModal = document.getElementById('closeModal');
 const imageGrid = document.getElementById('imageGrid');
+const downloadButton = document.getElementById('downloadButton');
+// Fix: Use querySelector to match the HTML structure (img1, img2, etc.)
 const slots = [
-  document.getElementById('slot1'),
-  document.getElementById('slot2'),
-  document.getElementById('slot3'),
-  document.getElementById('slot4')
+  document.querySelector('.img1'),
+  document.querySelector('.img2'),
+  document.querySelector('.img3'),
+  document.querySelector('.img4')
 ];
 let currentSlot = 0;
 
@@ -79,6 +81,21 @@ function selectImage(imgSrc, index) {
     currentSlot++;
   }
 }
+
+// Event listener for download button
+downloadButton.addEventListener('click', () => {
+  // Use html2canvas to capture the frame div as a canvas
+  html2canvas(document.querySelector('.frame')).then(canvas => {
+    // Create a download link for the PNG
+    const link = document.createElement('a');
+    link.download = 'frame.png';
+    link.href = canvas.toDataURL('image/png');
+    link.click();
+  }).catch(err => {
+    console.error('Error generating PNG:', err);
+    alert('Failed to download the frame. Please try again.');
+  });
+});
 
 // Close modal and restart video
 closeModal.addEventListener('click', () => {

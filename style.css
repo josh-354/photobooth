@@ -63,7 +63,6 @@ video {
 .modal-content {
   display: flex;
   align-items: flex-start;
-  padding: 50px 32px;
   width: 90%;
   max-width: 1600px;
   border-radius: 10px;
@@ -128,7 +127,7 @@ video {
   background-size: cover;
   justify-items: center;
   align-items: center;
-  padding-top: 40px;
+  padding-top: 62px;
 }
 
 .frame .img1,
@@ -141,7 +140,7 @@ video {
   align-items: center;
   font-size: 24px;
   color: #6F0C0C;
-  height: 136px;
+  height: 160px;
   width: 250px;
   margin-bottom: 20px;
 }
@@ -154,7 +153,23 @@ video {
   align-items: center;
   font-size: 24px;
   color: #6F0C0C;
-  height: 136px;
+  height: 160px;
   width: 250px;
-  margin-bottom: 50px;  
+  margin-bottom: 80px;  
+}
+
+/* Style for the download button */
+#downloadButton {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #fff;
+  color: #6F0C0C;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#downloadButton:hover {
+  background-color: #ddd;
 }
