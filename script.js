@@ -73,9 +73,9 @@ function selectImage(imgSrc, index) {
   if (currentSlot < 4) {
     const img = document.createElement('img');
     img.src = imgSrc;
-    img.style.width = '75%';
-    img.style.height = '82%';
-    img.style.objectFit = 'cover';
+    img.style.width = '100%';  // Fill the entire width of the slot
+    img.style.height = '100%'; // Fill the entire height of the slot
+    img.style.objectFit = 'cover'; // Maintain aspect ratio and cover the area
     slots[currentSlot].innerHTML = '';
     slots[currentSlot].appendChild(img);
     currentSlot++;
